@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5.MinApi", "5.MinApi\5.MinA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6.DiContoller", "6.DiContoller\6.DiContoller.csproj", "{143BEDB0-70DE-47D5-A4D6-3ECDF8DC7464}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Intro", "0.Intro", "{EA902AED-C0C2-44FE-8989-3B20CF3C66F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

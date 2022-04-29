@@ -6,6 +6,7 @@ Console.WriteLine("Hello, World!");
 using var stream = Console.OpenStandardOutput();
 await JsonSerializer.SerializeAsync(stream, FetchItems());
 
+Console.WriteLine("");
 Console.WriteLine("done");
 Console.ReadLine();
 

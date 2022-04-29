@@ -10,7 +10,8 @@ using(var client  = new HttpClient())
     {
         Console.WriteLine(item);
     }
-
+    Console.WriteLine("collected data done");
+    Console.ReadLine();
     try
     {
         await client.GetFromJsonAsync<WeatherForecast[]>("https://localhost:7170/WeatherForecast/problem");
@@ -19,6 +20,8 @@ using(var client  = new HttpClient())
     {
         Console.WriteLine("Exception:");
         Console.WriteLine(ex.Message);
+        Console.WriteLine("InnerException:");
+        Console.WriteLine(ex.InnerException);
         Console.ReadLine();
     }
 
@@ -30,6 +33,8 @@ using(var client  = new HttpClient())
     {
         Console.WriteLine("Exception:");
         Console.WriteLine(ex.Message);
+        Console.WriteLine("InnerException:");
+        Console.WriteLine(ex.InnerException);
         Console.ReadLine();
     }
 }

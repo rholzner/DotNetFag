@@ -18,19 +18,21 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet("")]
+    //så här gör vi
     public ActionResult<IEnumerable<WeatherForecast>> Og()
     {
         return Ok(weatherForecastService.GetAll());
     }
 
     [HttpGet("v1")]
+    //kom i .net core 2.0
     public ActionResult<IEnumerable<WeatherForecast>> v1([FromServices] WeatherForecastService weatherForecastService)
     {
        return Ok(weatherForecastService.GetAll());
     }
 
     [HttpGet("v2")]
-    //Kommer snart
+    //Kommer snart .net 7
     public ActionResult v2(WeatherForecastService weatherForecastService)
     {
         return Ok(weatherForecastService.GetAll());
