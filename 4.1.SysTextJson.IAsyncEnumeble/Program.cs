@@ -14,7 +14,7 @@ static async IAsyncEnumerable<int> FetchItems()
 {
     for (int i = 1; i <= 10; i++)
     {
-        await Task.Delay(100);
+        await Task.Delay(1000);
         yield return i;
     }
 }
