@@ -22,20 +22,20 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IAsyncEnumerable<WeatherForecast> GetWeatherForecastStream()
     {
-        async IAsyncEnumerable<WeatherForecast> streamWeatherForecastsAsync()
+        return streamWeatherForecastsAsync();
+    }
+
+    private async IAsyncEnumerable<WeatherForecast> streamWeatherForecastsAsync()
+    {
+        for (int daysFromToday = 1; daysFromToday <= 10; daysFromToday++)
         {
-            for (int daysFromToday = 1; daysFromToday <= 10; daysFromToday++)
+            await Task.Delay(1000);
+            yield return new WeatherForecast
             {
-                await Task.Delay(1000);
-                yield return new WeatherForecast
-                {
-                    Date = DateTime.Now.AddDays(daysFromToday),
-                    TemperatureC = Random.Shared.Next(-20, 55),
-                    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-                };
+                Date = DateTime.Now.AddDays(daysFromToday),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             };
         };
-
-        return streamWeatherForecastsAsync();
     }
 }
